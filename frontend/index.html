@@ -1,11 +1,1364 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Beauty Women | Cosméticos y Cuidado Personal</title>
+
+```
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: #fff7fb;
+        color: #333;
+    }
+
+    header {
+        background: #d63384;
+        color: white;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 27px;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    nav button {
+        background: transparent;
+        color: white;
+        border: none;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    nav button:hover {
+        background: rgba(255,255,255,0.15);
+        border-radius: 5px;
+    }
+
+    .cart-button {
+        background: white !important;
+        color: #d63384 !important;
+        border-radius: 20px;
+        font-weight: bold;
+    }
+
+    .hero {
+        min-height: 390px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #ffe1ef, #fff7fb);
+    }
+
+    .hero h1 {
+        color: #c2185b;
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        margin-bottom: 25px;
+        color: #555;
+    }
+
+    .btn {
+        border: none;
+        background: #d63384;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background: #b82b70;
+    }
+
+    .btn-secondary {
+        background: #777;
+    }
+
+    .container {
+        width: 86%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 45px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        color: #c2185b;
+        margin-bottom: 30px;
+        font-size: 32px;
+    }
+
+    .filters {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+
+    .filters input,
+    .filters select {
+        flex: 1;
+        min-width: 200px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+
+    .product {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: transform .2s;
+    }
+
+    .product:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-image {
+        height: 190px;
+        background: #f9d5e5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 65px;
+    }
+
+    .product-info {
+        padding: 18px;
+    }
+
+    .product-info h3 {
+        color: #c2185b;
+        margin-bottom: 8px;
+    }
+
+    .category {
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 21px;
+        font-weight: bold;
+        color: #222;
+        margin-bottom: 12px;
+    }
+
+    .stock {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.55);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .modal-content {
+        background: white;
+        width: 100%;
+        max-width: 550px;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 12px;
+        padding: 28px;
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .modal-header h2 {
+        color: #c2185b;
+    }
+
+    .close {
+        border: none;
+        background: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #777;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .cart-item-info {
+        flex: 1;
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .quantity button {
+        width: 28px;
+        height: 28px;
+        border: none;
+        background: #f1c0d7;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .total {
+        text-align: right;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 20px 0;
+        color: #c2185b;
+    }
+
+    .order {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 18px;
+        margin-bottom: 15px;
+        background: #fff;
+    }
+
+    .status {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 15px;
+        background: #ffe1ef;
+        color: #c2185b;
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+
+    .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+
+    .admin-table th {
+        background: #d63384;
+        color: white;
+    }
+
+    .admin-table button {
+        margin: 3px;
+        padding: 7px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .edit {
+        background: #ffc107;
+    }
+
+    .delete {
+        background: #dc3545;
+        color: white;
+    }
+
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        margin-top: 40px;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hero h1 {
+            font-size: 35px;
+        }
+
+        .admin-table {
+            font-size: 12px;
+        }
+    }
+</style>
+```
+
 </head>
+
 <body>
-    
+
+<header>
+    <div class="logo">Beauty Women</div>
+
+```
+<nav>
+    <button onclick="showSection('inicio')">Inicio</button>
+    <button onclick="showSection('productos')">Productos</button>
+    <button onclick="openModal('loginModal')">Iniciar sesión</button>
+    <button onclick="openModal('registerModal')">Registrarse</button>
+    <button onclick="showOrders()">Mis pedidos</button>
+    <button class="cart-button" onclick="openCart()">
+        🛒 Carrito (<span id="cartCount">0</span>)
+    </button>
+    <button onclick="showAdmin()">Administrador</button>
+</nav>
+```
+
+</header>
+
+<!-- INICIO -->
+
+<section id="inicio">
+    <div class="hero">
+        <div>
+            <h1>Beauty Women</h1>
+            <p>Cosméticos y productos de cuidado personal para resaltar tu belleza.</p>
+            <button class="btn" onclick="showSection('productos')">
+                Ver productos
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTOS -->
+
+<section id="productos" class="container">
+    <h2 class="section-title">Nuestros productos</h2>
+
+```
+<div class="filters">
+    <input
+        type="text"
+        id="search"
+        placeholder="Buscar producto..."
+        onkeyup="filterProducts()"
+    >
+
+    <select id="categoryFilter" onchange="filterProducts()">
+        <option value="todos">Todas las categorías</option>
+        <option value="Maquillaje">Maquillaje</option>
+        <option value="Cuidado facial">Cuidado facial</option>
+        <option value="Cuidado corporal">Cuidado corporal</option>
+        <option value="Cabello">Cabello</option>
+    </select>
+</div>
+
+<div id="productList" class="products"></div>
+```
+
+</section>
+
+<!-- PEDIDOS -->
+
+<section id="ordersSection" class="container hidden">
+    <h2 class="section-title">Mis pedidos</h2>
+    <div id="ordersList"></div>
+</section>
+
+<!-- ADMIN -->
+
+<section id="adminSection" class="container hidden">
+    <h2 class="section-title">Panel de Administrador</h2>
+
+```
+<button class="btn" onclick="openProductForm()">
+    + Agregar producto
+</button>
+
+<br><br>
+
+<div style="overflow-x:auto;">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Existencias</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody id="adminProducts"></tbody>
+    </table>
+</div>
+
+<br>
+
+<h2 style="color:#c2185b;">Pedidos recibidos</h2>
+<br>
+
+<div id="adminOrders"></div>
+```
+
+</section>
+
+<footer>
+    <p>© 2026 Beauty Women - Tienda de Cosméticos</p>
+    <p>Todos los derechos reservados.</p>
+</footer>
+
+<!-- MODAL LOGIN -->
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Iniciar sesión</h2>
+            <button class="close" onclick="closeModal('loginModal')">&times;</button>
+        </div>
+
+```
+    <form onsubmit="login(event)">
+        <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" required>
+        </div>
+
+        <button class="btn" type="submit">Iniciar sesión</button>
+    </form>
+</div>
+```
+
+</div>
+
+<!-- MODAL REGISTRO -->
+
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Crear cuenta</h2>
+            <button class="close" onclick="closeModal('registerModal')">&times;</button>
+        </div>
+
+```
+    <form onsubmit="register(event)">
+        <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" required>
+        </div>
+
+        <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" required>
+        </div>
+
+        <button class="btn" type="submit">Crear cuenta</button>
+    </form>
+</div>
+```
+
+</div>
+
+<!-- MODAL CARRITO -->
+
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Mi carrito</h2>
+            <button class="close" onclick="closeModal('cartModal')">&times;</button>
+        </div>
+
+```
+    <div id="cartItems"></div>
+
+    <div class="total">
+        Total: $<span id="cartTotal">0.00</span>
+    </div>
+
+    <button class="btn" onclick="checkout()">
+        Realizar pedido
+    </button>
+</div>
+```
+
+</div>
+
+<!-- MODAL PRODUCTO -->
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="productFormTitle">Agregar producto</h2>
+            <button class="close" onclick="closeModal('productModal')">&times;</button>
+        </div>
+
+```
+    <form onsubmit="saveProduct(event)">
+        <input type="hidden" id="productId">
+
+        <div class="form-group">
+            <label>Nombre del producto</label>
+            <input type="text" id="productName" required>
+        </div>
+
+        <div class="form-group">
+            <label>Categoría</label>
+            <select id="productCategory" required>
+                <option value="Maquillaje">Maquillaje</option>
+                <option value="Cuidado facial">Cuidado facial</option>
+                <option value="Cuidado corporal">Cuidado corporal</option>
+                <option value="Cabello">Cabello</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Precio</label>
+            <input type="number" id="productPrice" step="0.01" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label>Existencias</label>
+            <input type="number" id="productStock" min="0" required>
+        </div>
+
+        <button class="btn" type="submit">Guardar producto</button>
+    </form>
+</div>
+```
+
+</div>
+
+<script>
+    /* =========================
+       DATOS DE LA APLICACIÓN
+       ========================= */
+
+    let products = [
+        {
+            id: 1,
+            name: "Labial Rosa Mate",
+            category: "Maquillaje",
+            price: 159.99,
+            stock: 20,
+            icon: "💄"
+        },
+        {
+            id: 2,
+            name: "Base Líquida",
+            category: "Maquillaje",
+            price: 299.99,
+            stock: 15,
+            icon: "🧴"
+        },
+        {
+            id: 3,
+            name: "Crema Facial Hidratante",
+            category: "Cuidado facial",
+            price: 249.99,
+            stock: 12,
+            icon: "🌸"
+        },
+        {
+            id: 4,
+            name: "Sérum de Vitamina C",
+            category: "Cuidado facial",
+            price: 329.99,
+            stock: 10,
+            icon: "✨"
+        },
+        {
+            id: 5,
+            name: "Crema Corporal",
+            category: "Cuidado corporal",
+            price: 189.99,
+            stock: 18,
+            icon: "🧴"
+        },
+        {
+            id: 6,
+            name: "Shampoo Reparador",
+            category: "Cabello",
+            price: 219.99,
+            stock: 25,
+            icon: "🫧"
+        },
+        {
+            id: 7,
+            name: "Mascarilla Capilar",
+            category: "Cabello",
+            price: 179.99,
+            stock: 14,
+            icon: "💆"
+        },
+        {
+            id: 8,
+            name: "Paleta de Sombras",
+            category: "Maquillaje",
+            price: 389.99,
+            stock: 8,
+            icon: "🎨"
+        }
+    ];
+
+    let cart = [];
+    let orders = [];
+    let currentUser = null;
+
+    /* =========================
+       PRODUCTOS
+       ========================= */
+
+    function renderProducts(list = products) {
+
+        const container = document.getElementById("productList");
+
+        container.innerHTML = "";
+
+        if (list.length === 0) {
+            container.innerHTML =
+                "<p>No se encontraron productos.</p>";
+            return;
+        }
+
+        list.forEach(product => {
+
+            const card = document.createElement("div");
+
+            card.className = "product";
+
+            card.innerHTML = `
+                <div class="product-image">
+                    ${product.icon}
+                </div>
+
+                <div class="product-info">
+
+                    <h3>${product.name}</h3>
+
+                    <div class="category">
+                        ${product.category}
+                    </div>
+
+                    <div class="price">
+                        $${product.price.toFixed(2)}
+                    </div>
+
+                    <div class="stock">
+                        Existencias: ${product.stock}
+                    </div>
+
+                    <button
+                        class="btn"
+                        onclick="addToCart(${product.id})"
+                        ${product.stock === 0 ? "disabled" : ""}
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </div>
+            `;
+
+            container.appendChild(card);
+        });
+    }
+
+    function filterProducts() {
+
+        const search =
+            document.getElementById("search").value.toLowerCase();
+
+        const category =
+            document.getElementById("categoryFilter").value;
+
+        const filtered = products.filter(product => {
+
+            const matchesName =
+                product.name.toLowerCase().includes(search);
+
+            const matchesCategory =
+                category === "todos" ||
+                product.category === category;
+
+            return matchesName && matchesCategory;
+        });
+
+        renderProducts(filtered);
+    }
+
+    /* =========================
+       CARRITO
+       ========================= */
+
+    function addToCart(id) {
+
+        const product = products.find(p => p.id === id);
+
+        if (!product || product.stock <= 0) {
+            alert("El producto no tiene existencias.");
+            return;
+        }
+
+        const item = cart.find(p => p.id === id);
+
+        if (item) {
+
+            if (item.quantity < product.stock) {
+                item.quantity++;
+            } else {
+                alert("No hay más existencias disponibles.");
+                return;
+            }
+
+        } else {
+
+            cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                quantity: 1
+            });
+        }
+
+        updateCart();
+    }
+
+    function updateCart() {
+
+        const count =
+            cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        document.getElementById("cartCount").textContent = count;
+
+        const container =
+            document.getElementById("cartItems");
+
+        container.innerHTML = "";
+
+        let total = 0;
+
+        cart.forEach(item => {
+
+            total += item.price * item.quantity;
+
+            const div = document.createElement("div");
+
+            div.className = "cart-item";
+
+            div.innerHTML = `
+                <div class="cart-item-info">
+                    <strong>${item.name}</strong>
+                    <br>
+                    $${item.price.toFixed(2)}
+                </div>
+
+                <div class="quantity">
+                    <button onclick="changeQuantity(${item.id}, -1)">−</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="changeQuantity(${item.id}, 1)">+</button>
+                </div>
+
+                <button
+                    class="delete"
+                    onclick="removeFromCart(${item.id})"
+                >
+                    Eliminar
+                </button>
+            `;
+
+            container.appendChild(div);
+        });
+
+        document.getElementById("cartTotal").textContent =
+            total.toFixed(2);
+    }
+
+    function changeQuantity(id, amount) {
+
+        const item = cart.find(p => p.id === id);
+        const product = products.find(p => p.id === id);
+
+        if (!item || !product) return;
+
+        item.quantity += amount;
+
+        if (item.quantity <= 0) {
+            removeFromCart(id);
+            return;
+        }
+
+        if (item.quantity > product.stock) {
+            item.quantity = product.stock;
+            alert("Cantidad máxima disponible: " + product.stock);
+        }
+
+        updateCart();
+    }
+
+    function removeFromCart(id) {
+
+        cart = cart.filter(item => item.id !== id);
+
+        updateCart();
+    }
+
+    function openCart() {
+
+        updateCart();
+
+        openModal("cartModal");
+    }
+
+    function checkout() {
+
+        if (cart.length === 0) {
+            alert("El carrito está vacío.");
+            return;
+        }
+
+        if (!currentUser) {
+            alert("Debes iniciar sesión antes de realizar un pedido.");
+            closeModal("cartModal");
+            openModal("loginModal");
+            return;
+        }
+
+        let total = 0;
+
+        cart.forEach(item => {
+
+            const product =
+                products.find(p => p.id === item.id);
+
+            if (product) {
+                product.stock -= item.quantity;
+                total += item.price * item.quantity;
+            }
+        });
+
+        const order = {
+            id: orders.length + 1,
+            date: new Date().toLocaleDateString(),
+            total: total,
+            status: "Pendiente",
+            products: [...cart]
+        };
+
+        orders.push(order);
+
+        cart = [];
+
+        updateCart();
+
+        closeModal("cartModal");
+
+        renderProducts();
+
+        alert(
+            "Pedido generado correctamente.\nNúmero de pedido: #" +
+            order.id
+        );
+    }
+
+    /* =========================
+       USUARIOS
+       ========================= */
+
+    function register(event) {
+
+        event.preventDefault();
+
+        currentUser = {
+            name: event.target[0].value,
+            email: event.target[1].value
+        };
+
+        closeModal("registerModal");
+
+        alert(
+            "Cuenta creada correctamente. Bienvenido/a " +
+            currentUser.name
+        );
+    }
+
+    function login(event) {
+
+        event.preventDefault();
+
+        currentUser = {
+            name: "Cliente Beauty Women",
+            email: event.target[0].value
+        };
+
+        closeModal("loginModal");
+
+        alert("Inicio de sesión exitoso.");
+    }
+
+    /* =========================
+       PEDIDOS DEL CLIENTE
+       ========================= */
+
+    function showOrders() {
+
+        hideAllSections();
+
+        document.getElementById("ordersSection")
+            .classList.remove("hidden");
+
+        const container =
+            document.getElementById("ordersList");
+
+        container.innerHTML = "";
+
+        if (!currentUser) {
+
+            container.innerHTML = `
+                <p>
+                    Debes iniciar sesión para consultar tus pedidos.
+                </p>
+            `;
+
+            return;
+        }
+
+        if (orders.length === 0) {
+
+            container.innerHTML = `
+                <p>
+                    Todavía no tienes pedidos registrados.
+                </p>
+            `;
+
+            return;
+        }
+
+        orders.forEach(order => {
+
+            const div = document.createElement("div");
+
+            div.className = "order";
+
+            div.innerHTML = `
+                <h3>Pedido #${order.id}</h3>
+
+                <p>
+                    Fecha: ${order.date}
+                </p>
+
+                <p>
+                    Total:
+                    <strong>$${order.total.toFixed(2)}</strong>
+                </p>
+
+                <span class="status">
+                    ${order.status}
+                </span>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+
+    /* =========================
+       ADMINISTRADOR
+       ========================= */
+
+    function showAdmin() {
+
+        hideAllSections();
+
+        document.getElementById("adminSection")
+            .classList.remove("hidden");
+
+        renderAdminProducts();
+        renderAdminOrders();
+    }
+
+    function renderAdminProducts() {
+
+        const tbody =
+            document.getElementById("adminProducts");
+
+        tbody.innerHTML = "";
+
+        products.forEach(product => {
+
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${product.id}</td>
+                <td>${product.name}</td>
+                <td>${product.category}</td>
+                <td>$${product.price.toFixed(2)}</td>
+                <td>${product.stock}</td>
+
+                <td>
+                    <button
+                        class="edit"
+                        onclick="editProduct(${product.id})"
+                    >
+                        Editar
+                    </button>
+
+                    <button
+                        class="delete"
+                        onclick="deleteProduct(${product.id})"
+                    >
+                        Eliminar
+                    </button>
+                </td>
+            `;
+
+            tbody.appendChild(row);
+        });
+    }
+
+    function renderAdminOrders() {
+
+        const container =
+            document.getElementById("adminOrders");
+
+        container.innerHTML = "";
+
+        if (orders.length === 0) {
+
+            container.innerHTML =
+                "<p>No existen pedidos registrados.</p>";
+
+            return;
+        }
+
+        orders.forEach(order => {
+
+            const div = document.createElement("div");
+
+            div.className = "order";
+
+            div.innerHTML = `
+                <strong>Pedido #${order.id}</strong>
+                <p>Fecha: ${order.date}</p>
+                <p>Total: $${order.total.toFixed(2)}</p>
+
+                <select
+                    onchange="changeOrderStatus(${order.id}, this.value)"
+                >
+                    <option
+                        ${order.status === "Pendiente" ? "selected" : ""}
+                    >
+                        Pendiente
+                    </option>
+
+                    <option
+                        ${order.status === "Procesando" ? "selected" : ""}
+                    >
+                        Procesando
+                    </option>
+
+                    <option
+                        ${order.status === "Enviado" ? "selected" : ""}
+                    >
+                        Enviado
+                    </option>
+
+                    <option
+                        ${order.status === "Entregado" ? "selected" : ""}
+                    >
+                        Entregado
+                    </option>
+
+                    <option
+                        ${order.status === "Cancelado" ? "selected" : ""}
+                    >
+                        Cancelado
+                    </option>
+                </select>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+
+    function changeOrderStatus(id, status) {
+
+        const order = orders.find(order => order.id === id);
+
+        if (order) {
+            order.status = status;
+            renderAdminOrders();
+        }
+    }
+
+    /* =========================
+       CRUD PRODUCTOS
+       ========================= */
+
+    function openProductForm() {
+
+        document.getElementById("productFormTitle").textContent =
+            "Agregar producto";
+
+        document.getElementById("productId").value = "";
+        document.getElementById("productName").value = "";
+        document.getElementById("productCategory").value = "Maquillaje";
+        document.getElementById("productPrice").value = "";
+        document.getElementById("productStock").value = "";
+
+        openModal("productModal");
+    }
+
+    function editProduct(id) {
+
+        const product = products.find(p => p.id === id);
+
+        if (!product) return;
+
+        document.getElementById("productFormTitle").textContent =
+            "Editar producto";
+
+        document.getElementById("productId").value = product.id;
+        document.getElementById("productName").value = product.name;
+        document.getElementById("productCategory").value =
+            product.category;
+        document.getElementById("productPrice").value =
+            product.price;
+        document.getElementById("productStock").value =
+            product.stock;
+
+        openModal("productModal");
+    }
+
+    function saveProduct(event) {
+
+        event.preventDefault();
+
+        const id =
+            document.getElementById("productId").value;
+
+        const name =
+            document.getElementById("productName").value;
+
+        const category =
+            document.getElementById("productCategory").value;
+
+        const price =
+            parseFloat(document.getElementById("productPrice").value);
+
+        const stock =
+            parseInt(document.getElementById("productStock").value);
+
+        if (id) {
+
+            const product =
+                products.find(p => p.id === parseInt(id));
+
+            if (product) {
+                product.name = name;
+                product.category = category;
+                product.price = price;
+                product.stock = stock;
+            }
+
+        } else {
+
+            const newProduct = {
+
+                id: products.length > 0
+                    ? Math.max(...products.map(p => p.id)) + 1
+                    : 1,
+
+                name: name,
+                category: category,
+                price: price,
+                stock: stock,
+                icon: "💗"
+            };
+
+            products.push(newProduct);
+        }
+
+        closeModal("productModal");
+
+        renderProducts();
+        renderAdminProducts();
+
+        alert("Producto guardado correctamente.");
+    }
+
+    function deleteProduct(id) {
+
+        const product =
+            products.find(p => p.id === id);
+
+        if (!product) return;
+
+        const confirmation =
+            confirm(
+                "¿Deseas eliminar el producto " +
+                product.name +
+                "?"
+            );
+
+        if (!confirmation) return;
+
+        products =
+            products.filter(p => p.id !== id);
+
+        renderProducts();
+        renderAdminProducts();
+    }
+
+    /* =========================
+       NAVEGACIÓN
+       ========================= */
+
+    function hideAllSections() {
+
+        document.getElementById("inicio")
+            .classList.add("hidden");
+
+        document.getElementById("productos")
+            .classList.add("hidden");
+
+        document.getElementById("ordersSection")
+            .classList.add("hidden");
+
+        document.getElementById("adminSection")
+            .classList.add("hidden");
+    }
+
+    function showSection(section) {
+
+        hideAllSections();
+
+        document.getElementById(section)
+            .classList.remove("hidden");
+
+        if (section === "productos") {
+            renderProducts();
+        }
+    }
+
+    /* =========================
+       MODALES
+       ========================= */
+
+    function openModal(id) {
+
+        document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+
+        document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+
+        document.querySelectorAll(".modal")
+            .forEach(modal => {
+
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+
+            });
+    };
+
+    /* =========================
+       INICIALIZACIÓN
+       ========================= */
+
+    renderProducts();
+    updateCart();
+
+</script>
+
 </body>
 </html>
